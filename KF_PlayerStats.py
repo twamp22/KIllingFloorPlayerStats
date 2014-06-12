@@ -95,33 +95,53 @@ class Ui_Dialog(QtGui.QWidget):
         self.tabs.setTabText(self.tabs.indexOf(self.tab_7), _translate("Dialog", "Demolition"))
         self.getStats.clicked.connect(self.webGetStats)
 
+
     def webGetStats(self):
         readSteamID = self.lineEdit.text()
         sUrl = "http://steamcommunity.com/id/" + readSteamID + "/statsfeed/1250?xml=1&schema=1&l=english"
         page = urlopen(sUrl)
         string = page.read()
         root = etree.fromstring(string)
-        stats = root[1]
-        statslist = list(stats)
-        item = stats[1]
 
-        xN = 0
-        parsedStat = [None] * 50
-        parsedDisplayName = [None] * 50
-        for x in stats:
-            for i in statslist[xN]:
-                parsedStat[xN] = x[1].text
-                parsedDisplayName[xN] = x[2].text
-            xN = xN + 1
-        print(parsedDisplayName[1] + ": " + parsedStat[1])
-        self.textEdit_1.setHtml(parsedDisplayName[1] + ": " + parsedStat[1])
-        self.textEdit_2.setHtml(parsedDisplayName[2] + ": " + parsedStat[2] + "<br>" + parsedDisplayName[3] + ": " + parsedStat[3])
-        self.textEdit_3.setHtml(parsedDisplayName[4] + ": " + parsedStat[4])
-        self.textEdit_4.setHtml(parsedDisplayName[5] + ": " + parsedStat[5] + "<br>" + parsedDisplayName[6] + ": " + parsedStat[6])
-        self.textEdit_5.setHtml(parsedDisplayName[7] + ": " + parsedStat[7])
-        self.textEdit_6.setHtml(parsedDisplayName[8] + ": " + parsedStat[8])
-        self.textEdit_7.setHtml(parsedDisplayName[20] + ": " + parsedStat[20])
+        eN = 0
+        parsedErrorTag = [None] * 3
+        parsedErrorText = [None] * 3
+        for e in root:
+            print(eN)
+            print (e.tag,"=",e.text)
+            parsedErrorTag[eN] = e.tag
+            parsedErrorText[eN] = e.text
+            eN = eN + 1
 
+        if parsedErrorTag[0] == "error":
+            self.textEdit_1.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_2.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_3.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_4.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_5.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_6.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+            self.textEdit_7.setHtml(parsedErrorTag[0] + ": " + parsedErrorText[0])
+        else:
+            stats = root[1]
+            statslist = list(stats)
+            item = stats[1]
+
+            xN = 0
+            parsedStat = [None] * 50
+            parsedDisplayName = [None] * 50
+            for x in stats:
+                for i in statslist[xN]:
+                    parsedStat[xN] = x[1].text
+                    parsedDisplayName[xN] = x[2].text
+                xN = xN + 1
+
+            self.textEdit_1.setHtml(parsedDisplayName[1] + ": " + parsedStat[1])
+            self.textEdit_2.setHtml(parsedDisplayName[2] + ": " + parsedStat[2] + "<br>" + parsedDisplayName[3] + ": " + parsedStat[3])
+            self.textEdit_3.setHtml(parsedDisplayName[4] + ": " + parsedStat[4])
+            self.textEdit_4.setHtml(parsedDisplayName[5] + ": " + parsedStat[5] + "<br>" + parsedDisplayName[6] + ": " + parsedStat[6])
+            self.textEdit_5.setHtml(parsedDisplayName[7] + ": " + parsedStat[7])
+            self.textEdit_6.setHtml(parsedDisplayName[8] + ": " + parsedStat[8])
+            self.textEdit_7.setHtml(parsedDisplayName[20] + ": " + parsedStat[20])
 if __name__ == '__main__':
 	app = QtGui.QApplication(sys.argv)
 	ex = Ui_Dialog()
