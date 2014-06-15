@@ -137,9 +137,9 @@ class Ui_Dialog(QtGui.QWidget):
 
             self.textEdit_1.setHtml(parsedDisplayName[1] + ": " + parsedStat[1])
             self.textEdit_2.setHtml(parsedDisplayName[2] + ": " + parsedStat[2] + "<br>" + parsedDisplayName[3] + ": " + parsedStat[3])
-            self.textEdit_3.setHtml(parsedDisplayName[4] + ": " + parsedStat[4])
-            self.textEdit_4.setHtml(parsedDisplayName[5] + ": " + parsedStat[5] + "<br>" + parsedDisplayName[6] + ": " + parsedStat[6])
-            self.textEdit_5.setHtml(parsedDisplayName[7] + ": " + parsedStat[7])
+            self.textEdit_3.setHtml(parsedDisplayName[5] + ": " + parsedStat[5] + "<br>" + parsedDisplayName[6] + ": " + parsedStat[6])
+            self.textEdit_4.setHtml(parsedDisplayName[7] + ": " + parsedStat[7])
+            self.textEdit_5.setHtml(parsedDisplayName[4] + ": " + parsedStat[4])
             self.textEdit_6.setHtml(parsedDisplayName[8] + ": " + parsedStat[8])
             self.textEdit_7.setHtml(parsedDisplayName[20] + ": " + parsedStat[20])
 if __name__ == '__main__':
