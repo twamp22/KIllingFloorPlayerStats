@@ -382,7 +382,7 @@ class Ui_Dialog(QtGui.QWidget):
             if medicLevel < 6:
                 self.textEdit_1.setHtml('<b>Medic Level: ' + str(medicLevel) + '<br><br></b><u>For level ' + str((medicLevel) + 1) + ':</u><br>Healing Done Needed: ' + str(damageHealedToLevel_S))
             else:
-                self.textEdit_1.setHtml('<b>Medic Level: ' + str(medicLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Healing Done: ' + str(damageHealed_S))
+                self.textEdit_1.setHtml('<b>Medic Level: ' + str(medicLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Healing Done Total: ' + str(damageHealed_S))
             if supportLevel < 6:
                 if shotgunDamageToLevel == 0:
                     self.textEdit_2.setHtml('<b>Support Level: ' + str(supportLevel) + '<br><br></b><u>For level ' + str((supportLevel) + 1) + ':</u><br>Welding Points Needed: ' + str(weldingPointsToLevel_S))
@@ -391,7 +391,7 @@ class Ui_Dialog(QtGui.QWidget):
                 else:
                     self.textEdit_2.setHtml('<b>Support Level: ' + str(supportLevel) + '<br><br></b><u>For level ' + str((supportLevel) + 1) + ':</u><br>Shotgun Damage Needed: ' + str(shotgunDamageToLevel_S) + '<br>Welding Points Needed: ' + str(weldingPointsToLevel_S))
             else:
-                self.textEdit_2.setHtml('<b>Support Level: ' + str(supportLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Shotgun Damage: ' + str(shotgunDamage_S) + '<br>Welding Points: ' + str(weldingPoints_S))
+                self.textEdit_2.setHtml('<b>Support Level: ' + str(supportLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Shotgun Damage Total: ' + str(shotgunDamage_S) + '<br>Welding Points: ' + str(weldingPoints_S))
             if commandoLevel < 6:
                 if bullpupDamageToLevel == 0:
                     self.textEdit_3.setHtml('<b>Commando Level: ' + str(commandoLevel) + '<br><br></b><u>For level ' + str((commandoLevel) + 1) + ':</u><br>Stalkers Killed Needed: ' + str(stalkerKillsToLevel_S))
@@ -400,23 +400,23 @@ class Ui_Dialog(QtGui.QWidget):
                 else:
                     self.textEdit_3.setHtml('<b>Commando Level: ' + str(commandoLevel) + '<br><br></b><u>For level ' + str((commandoLevel) + 1) + ':</u><br>Assault Rifle Damage Needed: ' + str(bullpupDamageToLevel_S) + '<br>Stalkers Killed Needed: ' + str(stalkerKillsToLevel_S))
             else:
-                self.textEdit_3.setHtml('<b>Commando Level: ' + str(commandoLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Assault Rifle Damage: ' + str(bullpupDamage_S) + '<br>Stalkers Killed: ' + str(stalkerKills_S))
+                self.textEdit_3.setHtml('<b>Commando Level: ' + str(commandoLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Assault Rifle Damage Total: ' + str(bullpupDamage_S) + '<br>Stalkers Killed: ' + str(stalkerKills_S))
             if berserkerLevel < 6:
                 self.textEdit_4.setHtml('<b>Berserker Level: ' + str(berserkerLevel) + '<br><br></b><u>For level ' + str((berserkerLevel) + 1) + ':</u><br>Melee Damage Needed: ' + str(meleeDamageToLevel_S))
             else:
-                self.textEdit_4.setHtml('<b>Berserker Level: ' + str(berserkerLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Melee Damage: ' + str(meleeDamage_S))
+                self.textEdit_4.setHtml('<b>Berserker Level: ' + str(berserkerLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Melee Damage Total: ' + str(meleeDamage_S))
             if sharpshooterLevel < 6:
                 self.textEdit_5.setHtml('<b>Sharpshooter Level: ' + str(sharpshooterLevel) + '<br><br></b><u>For level ' + str((sharpshooterLevel) + 1) + ':</u><br>Headshot Kills Needed: ' + str(headshotKillsToLevel_S))
             else:
-                self.textEdit_5.setHtml('<b>Sharpshooter Level: ' + str(sharpshooterLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Headshot Kills: ' + str(headshotKills_S))
+                self.textEdit_5.setHtml('<b>Sharpshooter Level: ' + str(sharpshooterLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Headshot Kills Total: ' + str(headshotKills_S))
             if firebugLevel < 6:
                 self.textEdit_6.setHtml('<b>Firebug Level: ' + str(firebugLevel) + '<br><br></b><u>For level ' + str((firebugLevel) + 1) + ':</u><br>Flamethrower Damage Needed: ' + str(flamethrowerDamageToLevel_S))
             else:
-                self.textEdit_6.setHtml('<b>Firebug Level: ' + str(firebugLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>flamethrowerDamage: ' + str(flamethrowerDamage_S))
+                self.textEdit_6.setHtml('<b>Firebug Level: ' + str(firebugLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Flamethrower Damage Total: ' + str(flamethrowerDamage_S))
             if demolitionLevel < 6:
                 self.textEdit_7.setHtml('<b>Demolition Level: ' + str(demolitionLevel) + '<br><br></b><u>For level ' + str((demolitionLevel) + 1) + ':</u><br>Explosives Damage Needed: ' + str(explosivesDamageToLevel_S))
             else:
-                self.textEdit_7.setHtml('<b>Demolition Level: ' + str(demolitionLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>explosivesDamage: ' + str(explosiveDamage_S))
+                self.textEdit_7.setHtml('<b>Demolition Level: ' + str(demolitionLevel) + '<br><br></b><u>Total:</u><br>Kills: ' + totalKills + '<br>Explosive Damage Total: ' + str(explosivesDamage_S))
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
