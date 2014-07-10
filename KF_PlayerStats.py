@@ -12,6 +12,8 @@ class Ui_Dialog(QtGui.QWidget):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(649, 461)
+        Dialog.setMinimumSize(QtCore.QSize(649, 461))
+        Dialog.setMaximumSize(QtCore.QSize(649, 461))
         self.getStats = QtGui.QPushButton(Dialog)
         self.getStats.setGeometry(QtCore.QRect(5, 5, 90, 25))
         self.getStats.setToolTip("")
